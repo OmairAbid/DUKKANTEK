@@ -6,4 +6,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DUKKANTEK.Inventory.Application\DUKKANTEK.Inventory.Application.csproj" />
+    <ProjectReference Include="..\DUKKANTEK.Inventory.Domain\DUKKANTEK.Inventory.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

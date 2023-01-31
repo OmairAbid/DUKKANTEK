@@ -5,8 +5,15 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
+
+# Copy the necessary project files
+COPY ["Services/Inventory/DUKKANTEK.Inventory.Domain/DUKKANTEK.Inventory.Domain.csproj", "Services/Inventory/DUKKANTEK.Inventory.Domain/"]
+COPY ["Services/Inventory/DUKKANTEK.Inventory.Infrastructure/DUKKANTEK.Inventory.Infrastructure.csproj", "Services/Inventory/DUKKANTEK.Inventory.Infrastructure/"]
+COPY ["Services/Inventory/DUKKANTEK.Inventory.Application/Application.Commands.csproj", "Services/Inventory/DUKKANTEK.Inventory.Application/"]
 COPY ["Services/Inventory/DUKKANTEK.Inventory.API/DUKKANTEK.Inventory.API.csproj", "Services/Inventory/DUKKANTEK.Inventory.API/"]
 RUN dotnet restore "Services/Inventory/DUKKANTEK.Inventory.API/DUKKANTEK.Inventory.API.csproj"
 COPY . .
