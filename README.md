@@ -15,4 +15,4 @@ we hit end point to change the status of product
 3) Sell a product
 /api/Basket
 
-we hit end point to sell a product and add it to basket.
+we hit end point to sell a product and add it to a basket.
