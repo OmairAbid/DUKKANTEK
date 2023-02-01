@@ -2,7 +2,7 @@
 using System.Net;
 
 namespace DUKKANTEK.Inventory.API.Controllers;
-[Route("api/[controller]")]
+[Route("api/basket")]
 [ApiController]
 public class BasketController : ControllerBase
 {

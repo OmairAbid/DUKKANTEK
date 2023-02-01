@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
 namespace DUKKANTEK.Inventory.API.Controllers;
-[Route("api/[controller]")]
+[Route("api/product")]
 [ApiController]
 public class ProductController : ControllerBase
 {
@@ -20,7 +20,7 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet]
-    [Route("GetProductsCountbyStatus")]
+    [Route("get-product-status-count")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     public async Task<ActionResult> Get(CancellationToken cancellationToken)
     {
