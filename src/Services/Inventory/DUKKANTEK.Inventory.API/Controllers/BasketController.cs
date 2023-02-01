@@ -17,7 +17,7 @@ public class BasketController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType((int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.Created)]
     public async Task<ActionResult> Add(AddProductToBasketCommand request, CancellationToken cancellationToken)
     {
 
@@ -25,7 +25,7 @@ public class BasketController : ControllerBase
         {
             var response = await _mediator.Send(request, cancellationToken);
 
-            return Ok(response);
+            return Created("",response);
         }
         catch (Exception)
         {
